@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Encuentra tú trabajo explorando miles de oportunidades en el sector tecnológico."
+    />
+    <title>Resultado de búsqueda</title>
+    <!-- <link rel="stylesheet" href="../styles/style.css" /> -->
+    <link rel="stylesheet" href="../styles/search.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="header-navbar-search">
+        <h1 class="header-logo">DevJobs</h1>
+
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Empleos</a></li>
+          <li><a href="#">Empresas</a></li>
+          <li><a href="#">Salarios</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-profile">
+        <button class="btn header-btn">Subir CV</button>
+        <img src="../images/profile1.png" alt="foto de perfil de una usuario." />
+      </div>
+    </header>
+
+    <main class="main-searched">
+      <section>
+        <header>
+          <h1>Encuentra tu próximo trabajo</h1>
+          <p>Explora miles de oportunidades en el sector tecnológico.</p>
+        </header>
+
+        <footer>
+          <form role="search">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-search"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+              <path d="M21 21l-6 -6" />
+            </svg>
+            <input type="search" placeholder="Buscar trabajos, empresas o habilidades" />
+          </form>
+
+          <article>
+            <select aria-label="filtrar por tecnologia">
+              <option value="tecnologia">Tecnología</option>
+            </select>
+            <select aria-label="filtrar por localidad">
+              <option value="ubicacion">Ubicación</option>
+            </select>
+            <select aria-label="filtrar por contrato">
+              <option value="tipo">Tipo de contrato</option>
+            </select>
+            <select aria-label="filtrar por experiencia">
+              <option value="experiencia">Nivel de experiencía</option>
+            </select>
+          </article>
+        </footer>
+      </section>
+
+      <section class="section-search-results">
+        <h2>Resultados de búsqueda</h2>
+
+        <article>
+          <div class="card">
+            <header>
+              <h3>Ingeniero de Software</h3>
+              <div>
+                <span>Tech Solutions Inc.</span>
+                <span>| Remoto</span>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum tempora blanditiis
+                excepturi, minus corrupti? Voluptatum, dolorum. excepturi, minus corrupti?
+                Voluptatum, dolorum.
+              </p>
+            </header>
+
+            <footer>
+              <button class="btn btn-result">Aplicar</button>
+            </footer>
+          </div>
+          <div class="card">
+            <header>
+              <h3>Analista de Datos</h3>
+              <div>
+                <span>Data Driven Co.</span>
+                <span>| Medellín</span>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum tempora blanditiis
+                excepturi, minus corrupti? Voluptatum, dolorum. excepturi, minus corrupti?
+                Voluptatum, dolorum.
+              </p>
+            </header>
+
+            <footer>
+              <button class="btn btn-result">Aplicar</button>
+            </footer>
+          </div>
+          <div class="card">
+            <header>
+              <h3>Desarrollador de Aplicaciones Móviles</h3>
+              <div>
+                <span>Mobile Apps Ltd.</span>
+                <span>| Colombia</span>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum tempora blanditiis
+                excepturi, minus corrupti? Voluptatum, dolorum. excepturi, minus corrupti?
+                Voluptatum, dolorum.
+              </p>
+            </header>
+
+            <footer>
+              <button class="btn btn-result">Aplicar</button>
+            </footer>
+          </div>
+          <div class="card">
+            <header>
+              <h3>Ingeniero de DevOps</h3>
+              <div>
+                <span>Cloud Services SA</span>
+                <span>| Remoto</span>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum tempora blanditiis
+                excepturi, minus corrupti? Voluptatum, dolorum. excepturi, minus corrupti?
+                Voluptatum, dolorum.
+              </p>
+            </header>
+
+            <footer>
+              <button class="btn btn-result">Aplicar</button>
+            </footer>
+          </div>
+        </article>
+        <nav class="paginacion" aria-label="Paginación de resultados">
+          <ul>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+          </ul>
+        </nav>
+      </section>
+    </main>
+  </body>
+</html>
