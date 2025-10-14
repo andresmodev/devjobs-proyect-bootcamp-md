@@ -7,21 +7,33 @@
       name="description"
       content="Encuentra tú trabajo explorando miles de oportunidades en el sector tecnológico."
     />
-    <title>Resultado de búsqueda</title>
-    <!-- <link rel="stylesheet" href="../styles/style.css" /> -->
-    <link rel="stylesheet" href="../styles/search.css" />
+    <title>DevJobs - Buscar</title>
+    <link rel="stylesheet" href="../styles/style.css" />
+    <script type="module" src="../js/main.js"></script>
   </head>
   <body>
-    <header class="header">
-      <nav class="header-navbar-search">
-        <h1 class="header-logo">DevJobs</h1>
+    <header>
+      <h1 class="header-logo">
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <polyline points="16 18 22 12 16 6"></polyline>
+          <polyline points="8 6 2 12 8 18"></polyline>
+        </svg>
+        DevJobs
+      </h1>
 
-        <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Empleos</a></li>
-          <li><a href="#">Empresas</a></li>
-          <li><a href="#">Salarios</a></li>
-        </ul>
+      <nav>
+        <a href="../index.html">Inicio</a>
+        <a href="#">Empleos</a>
+        <a href="#">Empresas</a>
+        <a href="#">Salarios</a>
       </nav>
 
       <div class="header-profile">
@@ -30,15 +42,13 @@
       </div>
     </header>
 
-    <main class="main-searched">
-      <section>
-        <header>
-          <h1>Encuentra tu próximo trabajo</h1>
-          <p>Explora miles de oportunidades en el sector tecnológico.</p>
-        </header>
+    <main>
+      <section class="jobs-search">
+        <h1>Encuentra tu próximo trabajo</h1>
+        <p>Explora miles de oportunidades en el sector tecnológico.</p>
 
-        <footer>
-          <form role="search">
+        <form role="search">
+          <div class="search-bar">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -55,111 +65,138 @@
               <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
               <path d="M21 21l-6 -6" />
             </svg>
-            <input type="search" placeholder="Buscar trabajos, empresas o habilidades" />
-          </form>
 
-          <article>
-            <select aria-label="filtrar por tecnologia">
-              <option value="tecnologia">Tecnología</option>
+            <input required type="text" placeholder="Buscar trabajos, empresas o habilidades" />
+          </div>
+
+          <div class="search-filters">
+            <select name="technology" id="filter-technology">
+              <option value="">Tecnología</option>
+              <option value="javascript">JavaScript</option>
+              <option value="python">Python</option>
+              <option value="java">Java</option>
+              <option value="react">React</option>
+              <option value="nodejs">Node.js</option>
             </select>
-            <select aria-label="filtrar por localidad">
-              <option value="ubicacion">Ubicación</option>
+
+            <select name="location" id="location">
+              <option value="">Ubicación</option>
+              <option value="remoto">Remoto</option>
+              <option value="cdmx">Ciudad de México</option>
+              <option value="guadalajara">Guadalajara</option>
+              <option value="monterrey">Monterrey</option>
+              <option value="barcelona">Barcelona</option>
             </select>
-            <select aria-label="filtrar por contrato">
-              <option value="tipo">Tipo de contrato</option>
+
+            <select name="experience-level" id="experience-level">
+              <option value="">Nivel de experiencia</option>
+              <option value="junior">Junior</option>
+              <option value="mid">Mid-level</option>
+              <option value="senior">Senior</option>
+              <option value="lead">Lead</option>
             </select>
-            <select aria-label="filtrar por experiencia">
-              <option value="experiencia">Nivel de experiencía</option>
-            </select>
-          </article>
-        </footer>
+          </div>
+        </form>
       </section>
 
-      <section class="section-search-results">
+      <section>
         <h2>Resultados de búsqueda</h2>
 
-        <article>
-          <div class="card">
-            <header>
+        <div class="jobs-listings">
+          <article class="job-listing-card">
+            <div>
               <h3>Ingeniero de Software</h3>
-              <div>
-                <span>Tech Solutions Inc.</span>
-                <span>| Remoto</span>
-              </div>
+              <small>Tech Solutions Inc. | Remoto</small>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum tempora blanditiis
-                excepturi, minus corrupti? Voluptatum, dolorum. excepturi, minus corrupti?
-                Voluptatum, dolorum.
+                Buscamos un ingeniero de software con experiencia en desarrollo web y conocimientos
+                en JavaScript, React y Node.js. El candidato ideal debe ser capaz de trabajar en
+                equipo y tener buenas habilidades de comunicación.
               </p>
-            </header>
+            </div>
+            <button class="button-apply-job" id="boton-importante">Aplicar</button>
+          </article>
 
-            <footer>
-              <button class="btn btn-result">Aplicar</button>
-            </footer>
-          </div>
-          <div class="card">
-            <header>
+          <article class="job-listing-card">
+            <div>
               <h3>Analista de Datos</h3>
-              <div>
-                <span>Data Driven Co.</span>
-                <span>| Medellín</span>
-              </div>
+              <small>Data Driven Co. | Ciudad de México</small>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum tempora blanditiis
-                excepturi, minus corrupti? Voluptatum, dolorum. excepturi, minus corrupti?
-                Voluptatum, dolorum.
+                Estamos buscando un analista de datos con experiencia en el manejo de grandes
+                conjuntos de datos y herramientas de visualización. Se requiere conocimiento en SQL,
+                Python y R.
               </p>
-            </header>
+            </div>
+            <button class="button-apply-job">Aplicar</button>
+          </article>
 
-            <footer>
-              <button class="btn btn-result">Aplicar</button>
-            </footer>
-          </div>
-          <div class="card">
-            <header>
+          <article class="job-listing-card">
+            <div>
               <h3>Desarrollador de Aplicaciones Móviles</h3>
-              <div>
-                <span>Mobile Apps Ltd.</span>
-                <span>| Colombia</span>
-              </div>
+              <small>Mobile Apps Ltd. | Guadalajara</small>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum tempora blanditiis
-                excepturi, minus corrupti? Voluptatum, dolorum. excepturi, minus corrupti?
-                Voluptatum, dolorum.
+                Buscamos un desarrollador de aplicaciones móviles con experiencia en iOS y/o
+                Android. El candidato debe tener conocimientos en Swift, Kotlin y el desarrollo de
+                interfaces de usuario.
               </p>
-            </header>
+            </div>
+            <button class="button-apply-job">Aplicar</button>
+          </article>
 
-            <footer>
-              <button class="btn btn-result">Aplicar</button>
-            </footer>
-          </div>
-          <div class="card">
-            <header>
+          <article class="job-listing-card">
+            <div>
               <h3>Ingeniero de DevOps</h3>
-              <div>
-                <span>Cloud Services SA</span>
-                <span>| Remoto</span>
-              </div>
+              <small>Cloud Services SA | Remoto</small>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum tempora blanditiis
-                excepturi, minus corrupti? Voluptatum, dolorum. excepturi, minus corrupti?
-                Voluptatum, dolorum.
+                Estamos buscando un ingeniero de DevOps con experiencia en la gestión de
+                infraestructuras en la nube, automatización de procesos y herramientas de
+                integración continua. Se requiere conocimiento en AWS, Azure o GCP.
               </p>
-            </header>
+            </div>
+            <button class="button-apply-job">Aplicar</button>
+          </article>
+        </div>
 
-            <footer>
-              <button class="btn btn-result">Aplicar</button>
-            </footer>
-          </div>
-        </article>
-        <nav class="paginacion" aria-label="Paginación de resultados">
-          <ul>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-          </ul>
+        <nav class="pagination">
+          <a href="#"
+            ><svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M15 6l-6 6l6 6" /></svg
+          ></a>
+          <a class="is-active" href="#">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#"
+            ><svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M9 6l6 6l-6 6" /></svg
+          ></a>
         </nav>
       </section>
     </main>
+
+    <footer>
+      <small>&copy; 2025 DevJobs. Todos los derechos reservados.</small>
+    </footer>
   </body>
 </html>
