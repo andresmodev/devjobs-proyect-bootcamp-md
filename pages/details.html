@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevJobs - Detalles</title>
+    <link rel="stylesheet" href="../styles/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="header-logo">
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <polyline points="16 18 22 12 16 6"></polyline>
+          <polyline points="8 6 2 12 8 18"></polyline>
+        </svg>
+        DevJobs
+      </h1>
+
+      <nav>
+        <a href="../index.html">Inicio</a>
+        <a href="./search_result.html">Empleos</a>
+        <a href="#">Empresas</a>
+        <a href="#">Salarios</a>
+      </nav>
+
+      <div class="header-profile header-profile--details">
+        <form role="search">
+          <div class="search-bar details-search">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-search"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+              <path d="M21 21l-6 -6" />
+            </svg>
+
+            <input
+              name="search"
+              id="empleos-search-input"
+              required
+              type="text"
+              placeholder="Buscar"
+            />
+          </div>
+        </form>
+        <button class="btn header-btn">Subir CV</button>
+        <img src="../images/profile1.png" alt="foto de perfil de una usuario." />
+      </div>
+    </header>
+  </body>
+</html>
