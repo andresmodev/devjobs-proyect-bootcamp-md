@@ -1,11 +1,11 @@
 import styles from "./Pagination.module.css";
 
-const Pagination = ({ currentPage = 1, totalPage = 10, onPageChange }) => {
+const Pagination = ({ currentPage = 1, totalPages = 10, onPageChange }) => {
   // generar un array de paginas a mostrar
-  const pages = Array.from({ length: totalPage }, (_, i) => i + 1);
+  const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   const isFirstPage = currentPage === 1;
-  const isLastPage = currentPage === totalPage;
+  const isLastPage = currentPage === totalPages;
 
   const stylePrevButton = isFirstPage ? { pointerEvents: "none", opacity: 0.5 } : {};
   const styleNextButton = isLastPage ? { pointerEvents: "none", opacity: 0.5 } : {};

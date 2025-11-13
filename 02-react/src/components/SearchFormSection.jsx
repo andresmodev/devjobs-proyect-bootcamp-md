@@ -1,15 +1,23 @@
-import { useId } from "react";
+import { useId, useState } from "react";
 
-const SearchFormSection = ({ onSearch, onTextFilter }) => {
-  const idText = useId();
-  const idTechnology = useId();
-  const idLocation = useId();
-  const idExperienceLevel = useId();
+let timeoutId = null;
+
+const useSearchForm = ({
+  idTechnology,
+  idLocation,
+  idExperienceLevel,
+  idText,
+  onSearch,
+  onTextFilter,
+}) => {
+  const [searchText, setSearchText] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const formData = new formData(e.target);
+    const formData = new FormData(e.currentTarget);
+
+    if (e.target.name === idText) return;
 
     const filters = {
       technology: formData.get(idTechnology),
@@ -22,8 +30,39 @@ const SearchFormSection = ({ onSearch, onTextFilter }) => {
 
   const handleTextChange = (e) => {
     const text = e.target.value;
-    onTextFilter(text);
+    setSearchText(text); // actualizar el input inmediatamente
+
+    // DEBOUNCE: cancelar el timeout anterior
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+
+    timeoutId = setTimeout(() => {
+      onTextFilter(text);
+    }, 500);
   };
+
+  return {
+    searchText,
+    handleSubmit,
+    handleTextChange,
+  };
+};
+
+const SearchFormSection = ({ onSearch, onTextFilter }) => {
+  const idText = useId();
+  const idTechnology = useId();
+  const idLocation = useId();
+  const idExperienceLevel = useId();
+
+  const { handleSubmit, handleTextChange } = useSearchForm({
+    idTechnology,
+    idLocation,
+    idExperienceLevel,
+    idText,
+    onSearch,
+    onTextFilter,
+  });
 
   return (
     <>
@@ -31,7 +70,7 @@ const SearchFormSection = ({ onSearch, onTextFilter }) => {
         <h1>Encuentra tu próximo trabajo</h1>
         <p>Explora miles de oportunidades en el sector tecnológico.</p>
 
-        <form onSubmit={handleSubmit} id="empleos-search-form" role="search">
+        <form onChange={handleSubmit} id="empleos-search-form" role="search">
           <div className="search-bar">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -57,9 +96,6 @@ const SearchFormSection = ({ onSearch, onTextFilter }) => {
               placeholder="Buscar trabajos, empresas o habilidades"
               onChange={handleTextChange}
             />
-            <button type="submit" style={{ position: "absolute", right: "4px" }}>
-              Buscar
-            </button>
           </div>
 
           <div className="search-filters">
