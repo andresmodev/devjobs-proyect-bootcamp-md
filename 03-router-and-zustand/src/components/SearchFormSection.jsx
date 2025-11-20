@@ -50,7 +50,7 @@ const useSearchForm = ({
   };
 };
 
-const SearchFormSection = ({ onSearch, onTextFilter, initialText }) => {
+export const SearchFormSection = ({ onSearch, onTextFilter, initialText }) => {
   const idText = useId();
   const idTechnology = useId();
   const idLocation = useId();
@@ -152,5 +152,3 @@ const SearchFormSection = ({ onSearch, onTextFilter, initialText }) => {
     </>
   );
 };
-
-export default SearchFormSection;

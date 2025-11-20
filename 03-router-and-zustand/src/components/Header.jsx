@@ -1,0 +1,37 @@
+import { NavLink } from "react-router";
+import { Link } from "./Link.jsx";
+
+const Header = () => {
+  return (
+    <header>
+      <Link href="/" style={{ textDecoration: "none" }}>
+        <h1 style={{ color: "#fff" }}>
+          <svg
+            fill="none"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+          DevJobs
+        </h1>
+      </Link>
+
+      <nav>
+        <NavLink to="/">Inicio</NavLink>
+        <NavLink to="/search" className={({ isActive }) => (isActive ? "nav-link-active" : "")}>
+          Empleos
+        </NavLink>
+        <NavLink to="">Empresas</NavLink>
+        <NavLink to="">Salarios</NavLink>
+      </nav>
+    </header>
+  );
+};
+
+export default Header;

@@ -8,7 +8,7 @@ export function useRouter() {
       setCurrentPath(window.location.pathname);
     };
 
-    // suscriocion al evento
+    // suscribcion al evento
     window.addEventListener("popstate", handleLocationChange);
 
     // limpiar el evento
